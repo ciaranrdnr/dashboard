@@ -58,8 +58,8 @@ const WidgetChat = (props: IWidgetChat) => {
           <ChatContent
             refContent={refContentElement}
             chats={datasState}
-            recipientImg=""
-            senderImg=""
+            recipientImg={`/avatar-11.png`}
+            senderImg={`/avatar-2.png`}
           />
         ) : (
           <div className="w-full h-full pb-2"></div>

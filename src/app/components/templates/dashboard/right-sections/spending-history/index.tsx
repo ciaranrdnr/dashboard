@@ -16,16 +16,21 @@ interface ISpendingHistoryProps {
 }
 const SpendingDetail = ({ name, date, variant }: ITDetail) => {
   const img = {
-    entertainment: "",
-    shopping: "",
-    health: "",
-    food: "",
+    entertainment: "/game.avif",
+    shopping: "/shopping.avif",
+    health: "/health.avif",
+    food: "/food.jpeg",
   };
   return (
     <div className="flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
         <div className="w-12 h-12 rounded-full bg-blue-60 overflow-clip">
-          <Image alt={name ?? ""} src={img[variant as TVariants] ?? ""} />
+          <Image
+            width={48}
+            height={48}
+            alt={name ?? ""}
+            src={img[variant as TVariants] ?? ""}
+          />
         </div>
         <div className="flex flex-col">
           <p className="text-sm font-semibold select-all line-clamp-1">
@@ -48,7 +53,7 @@ const SpendingHistory = (props: ISpendingHistoryProps) => {
     },
     {
       id: 2,
-      name: "Pay the hospital",
+      name: "Medical checkup",
       variant: "health",
     },
     {
@@ -59,12 +64,12 @@ const SpendingHistory = (props: ISpendingHistoryProps) => {
     {
       id: 4,
       name: "Adidas shoes",
-      variant: "food",
+      variant: "shopping",
     },
     {
       id: 5,
-      name: "Will Smith",
-      variant: "shopping",
+      name: "Nasi padang with rendang",
+      variant: "food",
     },
   ];
   const dataTrimmed = useMemo(() => {

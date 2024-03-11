@@ -31,7 +31,7 @@ const TransactionDetail = ({
     <div className="flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
         <div className="w-10 h-10 rounded-full bg-blue-60">
-          <Image alt="" src={avatarSrc ?? ""} />
+          <Image width={40} height={40} alt="" src={avatarSrc ?? ""} />
         </div>
         <div className="flex flex-col">
           <p className="text-sm font-semibold select-all">
@@ -62,18 +62,18 @@ const TransactionHistory = (props: ITransactionHistorySection) => {
   const datas = [
     {
       id: 0,
-      name: "Bessie Cooper",
+      name: "Carol",
       date: "2024-03-10T20:24:50.729Z",
       value: 300,
-      avatarSrc: "",
+      avatarSrc: "/avatar-6.png",
       variant: "debit",
     },
     {
       id: 2,
-      name: "Guy Hawkins",
+      name: "Ashley Hawkins",
       date: "2024-03-10T14:29:02.692Z",
       value: 100,
-      avatarSrc: "",
+      avatarSrc: "/avatar-3.png",
       variant: "credit",
     },
     {
@@ -81,7 +81,7 @@ const TransactionHistory = (props: ITransactionHistorySection) => {
       name: "Floyd Miles",
       date: "2024-03-10T08:58:46.726Z",
       value: 20,
-      avatarSrc: "",
+      avatarSrc: "/avatar-4.png",
       variant: "credit",
     },
     {
@@ -89,7 +89,7 @@ const TransactionHistory = (props: ITransactionHistorySection) => {
       name: "Braidley Cooper",
       date: "2024-03-10T09:44:45.926Z",
       value: 300,
-      avatarSrc: "",
+      avatarSrc: "/avatar-11.png",
       variant: "debit",
     },
     {
@@ -97,7 +97,7 @@ const TransactionHistory = (props: ITransactionHistorySection) => {
       name: "Will Smith",
       date: "2024-03-10T13:35:39.436Z",
       value: 1000,
-      avatarSrc: "",
+      avatarSrc: "/avatar-7.png",
       variant: "debit",
     },
   ];

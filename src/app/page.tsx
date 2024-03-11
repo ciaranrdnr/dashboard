@@ -16,7 +16,7 @@ export default function Home() {
         <MiddleSections onTriggerAlert={handleAlert} />
         <div className="max-h-screen h-full sm:p-6 overflow-y-auto w-[25vw] sm:space-y-6 sticky top-0 right-0 bg-white hidden sm:flex sm:flex-col xl:justify-center">
           <ExpenseIncome />
-          <SpendingHistory />
+          <SpendingHistory onTriggerAlert={handleAlert} />
           <GoPremium />
         </div>
       </div>

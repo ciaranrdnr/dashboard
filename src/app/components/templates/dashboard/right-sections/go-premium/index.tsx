@@ -9,7 +9,7 @@ const GoPremium = () => {
         <h3 className="text-center w-full font-bold">Go to premium</h3>
       </div>
       <div className="w-20 h-20 rounded-lg bg-grey-50">
-        <Image alt="" src={""} />
+        <Image alt="go premium" width={80} height={80} src={"/premium.png"} />
       </div>
       <div className="flex flex-col space-y-1">
         <p className="text-base font-semibold">Need more features?</p>

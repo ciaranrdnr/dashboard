@@ -133,7 +133,12 @@ const Navbar = () => {
 
           <div className="bg-blue-20 flex flex-col items-center rounded-full p-1.5">
             <div className="w-10 h-10 bg-grey-50 rounded-full">
-              <Image src={""} alt="" />
+              <Image
+                src={"/avatar-2.png"}
+                alt="avatar"
+                width={40}
+                height={40}
+              />
             </div>
             <ExitIcon
               className="p-2 cursor-pointer rounded-full"
