@@ -11,7 +11,7 @@ const Chart = () => {
       {/* bar */}
       <div className="flex flex-col space-y-2 w-1/5">
         <div className="flex items-end w-full h-full space-x-1 relative">
-          <div className="w-1/2 h-full bg-blue-80/80 hover:bg-blue-100" />
+          <div className="w-1/2 h-full bottom-0 transition-all bg-blue-80/80 hover:bg-blue-100" />
           <div className="w-1/2 h-3/4 bg-blue-60/60 hover:bg-blue-60" />
         </div>
         <p>Dec</p>

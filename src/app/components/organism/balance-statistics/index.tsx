@@ -37,8 +37,9 @@ const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
             </div>
           </div>
           <div className="space-x-2 items-center hidden xl:flex">
-            <div className="w-10 h-8 rounded-lg relative">
+            <div className="w-10 h-8 rounded-lg relative overflow-clip">
               <Image
+                className="scale-150 htransition-all hover:animate-bounce"
                 draggable={false}
                 src={"/balance.avif"}
                 fill

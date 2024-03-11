@@ -8,15 +8,18 @@ const GoPremium = () => {
       <div className="flex">
         <h3 className="text-center w-full font-bold">Go to premium</h3>
       </div>
-      <div className="w-20 h-20 rounded-lg bg-grey-50">
-        <Image
-          draggable={false}
-          alt="go premium"
-          width={80}
-          height={80}
-          src={"/premium.png"}
-        />
-      </div>
+      <Link href={"https://ciaraa.com"} target="_blank">
+        <div className="w-20 h-20 rounded-lg overflow-clip cursor-pointer">
+          <Image
+            className="hover:scale-[1.4] transition-all scale-125 hover:animate-shake"
+            draggable={false}
+            alt="go premium"
+            width={80}
+            height={80}
+            src={"/premium.png"}
+          />
+        </div>
+      </Link>
       <div className="flex flex-col space-y-1">
         <p className="text-base font-semibold">Need more features?</p>
         <p className="text-xs text-grey-100 pb-2">

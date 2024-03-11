@@ -24,6 +24,7 @@ const BubbleChat = ({
       {showAvatar ? (
         <div className="w-8 h-8 flex-none rounded-full bg-persimmon-80 overflow-clip">
           <Image
+            className="scale-125 hover:scale-[1.75] transition-all"
             draggable={false}
             alt={text}
             width={60}

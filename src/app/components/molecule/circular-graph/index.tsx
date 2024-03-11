@@ -18,24 +18,24 @@ const CircularGraph = (props: ICircularGraph) => {
           strokeLinecap="round"
         />
         <path
-          d="M189.446 37.9898C189.446 37.9898 166.175 7.03924 112.186 7.03922"
+          d="M110 7.06255C121 6.3314 170.5 11.6894 191.5 40.1894"
           strokeWidth="14"
           strokeLinecap="round"
-          className="cursor-pointer stroke-persimmon-100/60 hover:stroke-persimmon-100"
+          className="animate-dash cursor-pointer stroke-persimmon-100/60 hover:stroke-persimmon-100"
           onMouseEnter={() => props.onChange("to do")}
         />
         <path
           d="M37 37.0392C46 25.5 78 6.00957 112.185 7.03921"
           strokeWidth="14"
           strokeLinecap="round"
-          className="cursor-pointer stroke-persimmon-80/60 hover:stroke-persimmon-80"
+          className="animate-dash cursor-pointer stroke-persimmon-80/60 hover:stroke-persimmon-80"
           onMouseEnter={() => props.onChange("progress")}
         />
         <path
           d="M7 112.225C7 112.225 9.0944 68.2423 37.0198 37.2917"
           strokeWidth="14"
           strokeLinecap="round"
-          className="cursor-pointer stroke-blue-80/60 hover:stroke-blue-80"
+          className="animate-dash cursor-pointer stroke-blue-80/60 hover:stroke-blue-80"
           onMouseEnter={() => props.onChange("done")}
         />
       </svg>

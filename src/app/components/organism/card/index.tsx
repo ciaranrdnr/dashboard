@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Card = () => {
   return (
-    <div className="flex relative overflow-clip flex-col justify-between w-full  lg:w-6/12 xl:w-6/12 2xl:w-5/12  h-full rounded-xl  text-white">
+    <div className="[&>.card]:hover:scale-110 flex relative overflow-clip flex-col justify-between w-full  lg:w-6/12 xl:w-6/12 2xl:w-5/12 h-full rounded-xl text-white">
       <div className="z-10 flex flex-col h-full justify-between bg-blue-80/50 p-5 space-y-10 lg:space-y-0">
         <div className="flex justify-between backdrop-blur-[1px] ">
           <div className="text-2xl font-bold shadow-sm">C.</div>
@@ -20,6 +20,7 @@ const Card = () => {
         draggable={false}
         src={"/card-bg.jpeg"}
         alt="card-background"
+        className="card transition-all"
         fill
       />
     </div>

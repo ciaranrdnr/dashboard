@@ -34,12 +34,13 @@ const TransactionDetail = ({
   return (
     <div className="flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
-        <div className="w-10 h-10 rounded-full bg-blue-60">
+        <div className="w-10 h-10 rounded-full bg-blue-60 overflow-clip">
           <Image
             draggable={false}
+            className="hover:scale-150 transition-all scale-125"
             width={40}
             height={40}
-            alt=""
+            alt={name ?? "avatar"}
             src={avatarSrc ?? ""}
           />
         </div>

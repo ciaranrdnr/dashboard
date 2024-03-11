@@ -19,6 +19,37 @@ const config: Config = {
             "sans-serif",
          ]
       },
+       animation:{
+        'dash':'dash 2s ease-out',
+        'grow':'grow 2s infinite',
+        'shake': 'shake 2s cubic-bezier(.36,.07,.19,.97) infinite',
+      },
+      keyframes: {
+        'dash':{
+          '0%' :{  strokeDashoffset: '100',strokeDasharray:'100'},
+          '100%' :{
+            strokeDashoffset: '0',
+          },
+        },
+        'grow':{
+          '0%' :{  transform: 'scaleY(0)'},
+          '100%' :{  transform: 'scaleY(1)'}
+        },
+        'shake' : {
+            '10%, 90%': {
+                transform: 'rotate(-15deg)'
+            },
+            '20%, 80%' : {
+                transform: 'rotate(10deg)'
+            },
+            '30%, 50%, 70%': {
+                transform: 'rotate(15deg)'
+            },
+            '40%, 60%': {
+                transform: 'rotate(-15deg)'
+            }
+        }
+      },
       "fontSize": {
         "body-base":"14px",
         "body-lg":"16px",

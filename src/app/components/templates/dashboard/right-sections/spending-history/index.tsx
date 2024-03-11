@@ -22,10 +22,11 @@ const SpendingDetail = ({ name, date, variant }: ITDetail) => {
     food: "/food.jpeg",
   };
   return (
-    <div className="flex justify-between cursor-default">
+    <div className="[&>div>div>.img]:hover:scale-150 flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
-        <div className="w-12 h-12 flex-none rounded-full bg-blue-60 overflow-clip">
+        <div className="w-12 h-12 flex-none rounded-sm bg-blue-60 overflow-clip">
           <Image
+            className="img transition-all scale-125"
             draggable={false}
             width={48}
             height={48}

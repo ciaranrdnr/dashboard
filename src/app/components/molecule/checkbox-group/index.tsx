@@ -4,6 +4,7 @@ import Button from "@/app/components/atom/button";
 import useLocalStorageState from "@/app/hooks/local-storage";
 import { useEffect, useRef, useState } from "react";
 import CrossIcon from "@/app/assets/icons/cross";
+import PopUpAlert from "../alert";
 
 type TVariants = "horizontal" | "vertical" | "grid";
 
@@ -110,7 +111,9 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
     <div className="flex flex-col space-y-5 text-sm ">
       <div className="flex justify-between items-center">
         <div className="flex space-x-4 text-black font-semibold text-xs">
-          <p>{`${isRendered ? sumChecked : 0}/${props.datas.length}`}</p>
+          <p>{`${isRendered ? sumChecked : 0}/${
+            isRendered ? datasState.length : props.datas.length
+          }`}</p>
           <p>Shopping List</p>
         </div>
         <Button
@@ -153,6 +156,16 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
         </fieldset>
       ) : (
         <LoadingElement />
+      )}
+      {sumChecked == datasState.length && datasState.length > 0 && (
+        <PopUpAlert
+          title="🎉 Congratulations on an Incredible Journey! 🎉"
+          description="You've done it! every Wish, Fulfilled."
+          className="min-w-[300px] items-center space-y-4 animate-bounce mb-14 sm:mb-10"
+          cta={<></>}
+          wrapClassName="justify-center items-end"
+          duration={5000}
+        />
       )}
     </div>
   );

@@ -15,9 +15,7 @@ export default function Home() {
         <MiddleSections onTriggerAlert={handleAlert} />
         <RightSections onTriggerAlert={handleAlert} />
       </div>
-      {showAlert && (
-        <PopUpAlert message="Coming Soon. go premium now!" duration={3000} />
-      )}
+      {showAlert && <PopUpAlert duration={3000} />}
     </main>
   );
 }

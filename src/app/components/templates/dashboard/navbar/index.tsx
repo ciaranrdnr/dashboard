@@ -33,7 +33,7 @@ const Navbar = () => {
               isOpen
                 ? "flex-col backdrop-blur-sm bg-white/20"
                 : "flex-col-reverse"
-            } items-center justify-between sm:bg-white h-screen py-[5vh] sm:ssticky fixed top-0 left-0 z-30"`}
+            } items-center justify-between sm:bg-white h-screen py-[5vh] sm:ssticky top-0 left-0 z-30"`}
           >
             <div className="flex flex-col items-center justify-between space-y-4 sm:sspace-y-10">
               {!mobile && (
@@ -136,6 +136,7 @@ const Navbar = () => {
               <div className="w-10 h-10 bg-grey-50 rounded-full overflow-clip">
                 <Image
                   draggable={false}
+                  className="hover:scale-150 transition-all scale-125"
                   src={"/avatar-2.png"}
                   alt="avatar"
                   width={40}

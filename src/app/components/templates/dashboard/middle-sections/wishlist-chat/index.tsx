@@ -12,6 +12,7 @@ const WishlistChat = () => {
     { id: 3, label: "Motorcyle", checked: false },
     { id: 4, label: "Iphone 14 pro max", checked: false },
   ];
+
   return (
     <div className="flex bg-white rounded-xl flex-col xl:flex-row">
       <WidgetWishlist
