@@ -20,7 +20,7 @@ const MiddleSections = (props: IMiddleSectionsProps) => {
     setMobile(isMobile);
   }, []);
   return (
-    <div className="flex flex-col space-y-5 h-full px-4 pb-7 pt-6 w-screen md:w-6/12 lg:w-8/12 xl:w-full xl:px-20 lg:pt-[5vh]">
+    <div className="flex flex-col space-y-5 h-full px-4 pb-7 pt-6 w-screen md:w-6/12 lg:w-8/12 xl:w-full xl:px-20 lg:pt-[5vh] sm:ml-[100px]">
       <GreetingsSection />
       <div className="flex lg:flex-row flex-col space-y-5 lg:space-y-0 lg:space-x-5 items-center">
         <BalanceStatisticsSection onTriggerAlert={props.onTriggerAlert} />
