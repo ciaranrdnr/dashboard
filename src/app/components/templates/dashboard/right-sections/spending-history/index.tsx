@@ -24,7 +24,7 @@ const SpendingDetail = ({ name, date, variant }: ITDetail) => {
   return (
     <div className="flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
-        <div className="w-12 h-12 rounded-full bg-blue-60 overflow-clip">
+        <div className="w-12 h-12 flex-none rounded-full bg-blue-60 overflow-clip">
           <Image
             width={48}
             height={48}
@@ -79,9 +79,9 @@ const SpendingHistory = (props: ISpendingHistoryProps) => {
     return datas.slice(0, 3);
   }, [isViewAll, datas]);
   return (
-    <div className="flex flex-col items-center select-none space-y-4 p-4 rounded-xl lg:border bg-white w-full">
+    <div className="flex flex-col items-center select-none space-y-4 p-4 rounded-xl sm:border bg-white w-full">
       <div className="flex justify-between w-full">
-        <p className="font-semibold">Latest spending</p>
+        <p className="font-semibold">Latest spendings</p>
         <ThreeDotsIcon
           onClick={props.onTriggerAlert}
           fillClassName="fill-black"

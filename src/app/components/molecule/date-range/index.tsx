@@ -1,5 +1,7 @@
+"use client";
 import ChevronIcon from "@/app/assets/icons/chevron";
 import DateAndTime from "@/app/components/atom/date-preview";
+import { useEffect, useState } from "react";
 
 export interface IDateRangeProps {
   startDate?: Date;
@@ -8,6 +10,7 @@ export interface IDateRangeProps {
 
 const DateRange = (props: IDateRangeProps) => {
   const date = new Date();
+  const [isRendered, setIsRendered] = useState(false);
 
   const handleDate = (date: Date) => {
     const today = `${date.toDateString()}`;
@@ -29,9 +32,16 @@ const DateRange = (props: IDateRangeProps) => {
   const endDateConverted = handleDate(props.endDate);
   const endTimeConverted = handleTime(props.endDate);
 
+  useEffect(() => {
+    setIsRendered(true);
+  }, []);
+
   return (
     <div className="flex items-center space-x-6">
-      <DateAndTime date={startDateConverted} time={startTimeConverted} />
+      <DateAndTime
+        date={isRendered ? startDateConverted : "00:00"}
+        time={isRendered ? startTimeConverted : "00:00"}
+      />
       <ChevronIcon size={24} strokeClassName="stroke-black" />
       <DateAndTime date={endDateConverted} time={endTimeConverted} />
     </div>

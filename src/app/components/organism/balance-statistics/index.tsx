@@ -8,7 +8,7 @@ interface IBalanceStatisticsSection {
 }
 const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
   return (
-    <div className="flex flex-col xl:space-y-2 p-5 h-full rounded-xl bg-white lg:w-6/12 xl:w-6/12 2xl:w-7/12">
+    <div className="flex flex-col w-full xl:space-y-2 p-5 h-full rounded-xl bg-white lg:w-6/12 xl:w-6/12 2xl:w-7/12">
       <div className="flex justify-between items-center">
         <h3 className="pb-2 font-semibold">Balance statistics</h3>
         <div
@@ -38,12 +38,7 @@ const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
           </div>
           <div className="space-x-2 items-center hidden xl:flex">
             <div className="w-10 h-8 rounded-lg relative">
-              <Image
-                src={"/balance.avif"}
-                fill
-                alt="balance"
-                objectFit="cover"
-              />
+              <Image src={"/balance.avif"} fill alt="balance" />
             </div>
             <p className="text-xs">Your total balance</p>
           </div>
@@ -51,12 +46,7 @@ const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
           <div className="flex-col space-y-2 ">
             <div className=" hidden xl:flex items-center space-x-2">
               <div className="w-20 h-8 rounded-lg relative">
-                <Image
-                  src={"/bar-chart.jpeg"}
-                  fill
-                  alt="bar-chart"
-                  objectFit="cover"
-                />
+                <Image src={"/bar-chart.jpeg"} fill alt="bar-chart" />
               </div>
               <div className="flex space-x-1 items-center">
                 <ArrowIcon

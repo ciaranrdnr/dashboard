@@ -11,13 +11,15 @@ export default function Home() {
   const handleAlert = () => setShowAlert(!showAlert);
   return (
     <main className="relative text-black">
-      <div className="flex lg:flex-row flex-col justify-stretch h-screen items-center bg-blue-20 relative overflow-x-clip overflow-y-auto">
+      <div className="flex sm:flex-row flex-col justify-stretch h-screen items-center bg-blue-20 relative overflow-x-clip overflow-y-auto">
         <Navbar />
         <MiddleSections onTriggerAlert={handleAlert} />
-        <div className="max-h-screen h-full sm:p-6 overflow-y-auto w-[25vw] sm:space-y-6 sticky top-0 right-0 bg-white hidden sm:flex sm:flex-col xl:justify-center">
-          <ExpenseIncome />
-          <SpendingHistory onTriggerAlert={handleAlert} />
-          <GoPremium />
+        <div className="h-screen lg:w-[25vw] sticky top-0 right-0 bg-white hidden sm:flex ">
+          <div className="max-h-screen overflow-y-auto w-full sm:p-6 sm:space-y-6 sm:flex sm:flex-col xl:justify-center">
+            <ExpenseIncome />
+            <SpendingHistory onTriggerAlert={handleAlert} />
+            <GoPremium />
+          </div>
         </div>
       </div>
       {showAlert && (

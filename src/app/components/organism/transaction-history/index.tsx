@@ -27,6 +27,10 @@ const TransactionDetail = ({
   ...props
 }: ITDetail) => {
   const dateConverted = new Date(date);
+  const [isRendered, setIsRendered] = useState(false);
+  useEffect(() => {
+    setIsRendered(true);
+  }, []);
   return (
     <div className="flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
@@ -38,7 +42,7 @@ const TransactionDetail = ({
             {name ?? "Bessie Cooper"}
           </p>
           <p className="text-xs">
-            {dateConverted?.toLocaleString() ?? "02 Jan"}
+            {isRendered ? dateConverted?.toLocaleString() : "02 Jan"}
           </p>
         </div>
       </div>

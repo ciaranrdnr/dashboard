@@ -29,12 +29,22 @@ const WidgetChat = (props: IWidgetChat) => {
     };
     setTypedChat(newChat);
   };
+  const handleBotAutoReply = () => {
+    const newChat: IChat = {
+      id: datasState.length,
+      text: "[Bot]: Hi! its an automatic reply message. Go get premium to experience all features.",
+      role: "recipient",
+    };
+    return newChat;
+  };
   const handleSendChat = () => {
     if (datasState && typedChat) {
-      setDatasState([...datasState, typedChat]);
+      const botMessage = handleBotAutoReply();
+      setDatasState([...datasState, typedChat, botMessage]);
       setTypedChat(undefined);
     }
   };
+
   const refContentElement = useRef<any>();
   const scrollToBottom = () => {
     if (refContentElement.current) {
@@ -45,7 +55,7 @@ const WidgetChat = (props: IWidgetChat) => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [isRendered]);
+  }, [isRendered, datasState]);
 
   useEffect(() => {
     setIsRendered(true);

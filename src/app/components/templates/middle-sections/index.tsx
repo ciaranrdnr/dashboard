@@ -9,6 +9,7 @@ import ExpenseIncome from "../dashboard/right-sections/expense-income";
 import SpendingHistory from "../dashboard/right-sections/spending-history";
 import GoPremium from "../dashboard/right-sections/go-premium";
 import { useEffect, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 interface IMiddleSectionsProps {
   onTriggerAlert: (e?: any) => void;
@@ -16,22 +17,22 @@ interface IMiddleSectionsProps {
 const MiddleSections = (props: IMiddleSectionsProps) => {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    setMobile(mobile);
+    setMobile(isMobile);
   }, []);
   return (
-    <div className="flex flex-col space-y-5 h-full px-4 pb-7 pt-6 w-screen lg:w-8/12 xl:w-full xl:px-20 lg:pt-[5vh]">
+    <div className="flex flex-col space-y-5 h-full px-4 pb-7 pt-6 w-screen md:w-6/12 lg:w-8/12 xl:w-full xl:px-20 lg:pt-[5vh]">
       <GreetingsSection />
       <div className="flex lg:flex-row flex-col space-y-5 lg:space-y-0 lg:space-x-5 items-center">
         <BalanceStatisticsSection onTriggerAlert={props.onTriggerAlert} />
         <Card />
       </div>
       <WishlistChat />
-      <div className="flex lg:flex-row flex-col space-y-5 lg:space-y-0 lg:space-x-5">
+      <div className="flex lg:flex-row flex-col space-y-5 lg:space-y-0 lg:space-x-5 lg:pb-10">
         <TransactionHistory onTriggerAlert={props.onTriggerAlert} />
         <AnalyticsWidget onTriggerAlert={props.onTriggerAlert} />
       </div>
-      {!mobile && (
-        <div className="flex flex-col space-y-5 sm:hidden pb-5 sm:pb-0">
+      {mobile && (
+        <div className="flex flex-col space-y-5 pb-10">
           <ExpenseIncome />
           <SpendingHistory onTriggerAlert={props.onTriggerAlert} />
           <GoPremium />

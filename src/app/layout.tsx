@@ -15,14 +15,14 @@ export default function RootLayout({
     <html lang="en">
       <link
         rel="apple-touch-icon"
-        href="https://www.dashboard.id/apple-touch-icon.png"
+        href="https://ciaraa.com/assets/logociara-col.svg"
         type="image/<generated>"
         sizes="<generated>"
       />
       <link
         rel="icon"
-        type="image/png"
-        href="https://www.dashboard.id/apple-touch-icon.png"
+        type="image/svg"
+        href="https://ciaraa.com/assets/logociara-col.svg"
         sizes="32x32"
       ></link>
       <body>{children}</body>

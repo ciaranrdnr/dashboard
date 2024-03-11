@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 function useLocalStorageState<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] {
   const [storedValue, setStoredValue] = useState<T>(() => {
     if (typeof window === 'undefined') {
-      // Return initialValue if we're rendering server-side
       return initialValue;
     }
     try {
