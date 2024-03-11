@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'paper-sepia.vercel.app',
+        hostname: 'dashboard.ciaraa.com',
         pathname: '/**',
       },
        {
