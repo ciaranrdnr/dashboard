@@ -29,13 +29,13 @@ const Navbar = () => {
       <>
         {isOpen && (
           <div
-            className={`w-16 sm:w-[100px] transition-all flex ${
+            className={`w-16 sm:sw-[100px] transition-all flex ${
               isOpen
                 ? "flex-col backdrop-blur-sm bg-white/20"
                 : "flex-col-reverse"
-            } items-center justify-between sm:bg-white h-screen py-[5vh] sm:sticky fixed top-0 left-0 z-30"`}
+            } items-center justify-between sm:bg-white h-screen py-[5vh] sm:ssticky fixed top-0 left-0 z-30"`}
           >
-            <div className="flex flex-col items-center justify-between space-y-4 sm:space-y-10">
+            <div className="flex flex-col items-center justify-between space-y-4 sm:sspace-y-10">
               {!mobile && (
                 <p className="font-bold text-2xl select-none cursor-pointer">
                   C.
@@ -135,6 +135,7 @@ const Navbar = () => {
             <div className="bg-blue-20 flex flex-col items-center rounded-full p-1.5">
               <div className="w-10 h-10 bg-grey-50 rounded-full overflow-clip">
                 <Image
+                  draggable={false}
                   src={"/avatar-2.png"}
                   alt="avatar"
                   width={40}

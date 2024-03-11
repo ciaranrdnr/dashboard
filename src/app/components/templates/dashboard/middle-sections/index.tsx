@@ -5,9 +5,9 @@ import GreetingsSection from "./greetings";
 import WishlistChat from "./wishlist-chat";
 import TransactionHistory from "@/app/components/organism/transaction-history";
 import AnalyticsWidget from "@/app/components/organism/analytics";
-import ExpenseIncome from "../dashboard/right-sections/expense-income";
-import SpendingHistory from "../dashboard/right-sections/spending-history";
-import GoPremium from "../dashboard/right-sections/go-premium";
+import ExpenseIncome from "../right-sections/expense-income";
+import SpendingHistory from "../right-sections/spending-history";
+import GoPremium from "../right-sections/go-premium";
 import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 

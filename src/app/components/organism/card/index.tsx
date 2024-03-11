@@ -16,7 +16,12 @@ const Card = () => {
           <div className="shadow-sm text-xs font-semibold">03/24</div>
         </div>
       </div>
-      <Image src={"/card-bg.jpeg"} alt="card-background" fill />
+      <Image
+        draggable={false}
+        src={"/card-bg.jpeg"}
+        alt="card-background"
+        fill
+      />
     </div>
   );
 };

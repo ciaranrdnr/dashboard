@@ -26,6 +26,7 @@ const SpendingDetail = ({ name, date, variant }: ITDetail) => {
       <div className="flex space-x-4 items-center">
         <div className="w-12 h-12 flex-none rounded-full bg-blue-60 overflow-clip">
           <Image
+            draggable={false}
             width={48}
             height={48}
             alt={name ?? ""}
@@ -33,7 +34,7 @@ const SpendingDetail = ({ name, date, variant }: ITDetail) => {
           />
         </div>
         <div className="flex flex-col">
-          <p className="text-sm font-semibold select-all line-clamp-1">
+          <p className="text-sm font-semibold select-all line-clamp-2">
             {name ?? "Bessie Cooper"}
           </p>
           <p className="text-xs">{date ?? "02 Jan"}</p>

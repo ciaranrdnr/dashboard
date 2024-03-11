@@ -38,7 +38,12 @@ const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
           </div>
           <div className="space-x-2 items-center hidden xl:flex">
             <div className="w-10 h-8 rounded-lg relative">
-              <Image src={"/balance.avif"} fill alt="balance" />
+              <Image
+                draggable={false}
+                src={"/balance.avif"}
+                fill
+                alt="balance"
+              />
             </div>
             <p className="text-xs">Your total balance</p>
           </div>
@@ -46,7 +51,12 @@ const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
           <div className="flex-col space-y-2 ">
             <div className=" hidden xl:flex items-center space-x-2">
               <div className="w-20 h-8 rounded-lg relative">
-                <Image src={"/bar-chart.jpeg"} fill alt="bar-chart" />
+                <Image
+                  draggable={false}
+                  src={"/bar-chart.jpeg"}
+                  fill
+                  alt="bar-chart"
+                />
               </div>
               <div className="flex space-x-1 items-center">
                 <ArrowIcon

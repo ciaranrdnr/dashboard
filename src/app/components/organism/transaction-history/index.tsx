@@ -35,7 +35,13 @@ const TransactionDetail = ({
     <div className="flex justify-between cursor-default">
       <div className="flex space-x-4 items-center">
         <div className="w-10 h-10 rounded-full bg-blue-60">
-          <Image width={40} height={40} alt="" src={avatarSrc ?? ""} />
+          <Image
+            draggable={false}
+            width={40}
+            height={40}
+            alt=""
+            src={avatarSrc ?? ""}
+          />
         </div>
         <div className="flex flex-col">
           <p className="text-sm font-semibold select-all">

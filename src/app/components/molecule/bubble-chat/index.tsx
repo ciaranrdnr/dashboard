@@ -24,11 +24,11 @@ const BubbleChat = ({
       {showAvatar ? (
         <div className="w-8 h-8 flex-none rounded-full bg-persimmon-80 overflow-clip">
           <Image
+            draggable={false}
             alt={text}
             width={60}
             height={60}
             src={avatarSrc}
-            draggable={false}
           />
         </div>
       ) : (
