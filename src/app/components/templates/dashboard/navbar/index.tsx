@@ -25,13 +25,15 @@ const Navbar = () => {
 
   const bgStyle = `bg-blue-80 hover:bg-blue-40`;
   return (
-    <div
-      className={`w-16 lg:w-[100px] transition-all flex ${
-        isOpen ? "flex-col backdrop-blur-sm bg-white/20" : "flex-col-reverse"
-      } items-center justify-between lg:bg-white h-screen py-[5vh] lg:sticky fixed top-0 left-0 z-10"`}
-    >
-      {isOpen ? (
-        <>
+    <>
+      {isOpen && (
+        <div
+          className={`w-16 lg:w-[100px] transition-all flex ${
+            isOpen
+              ? "flex-col backdrop-blur-sm bg-white/20"
+              : "flex-col-reverse"
+          } items-center justify-between lg:bg-white h-screen py-[5vh] lg:sticky fixed top-0 left-0 z-10"`}
+        >
           <div className="flex flex-col items-center justify-between space-y-4 lg:space-y-10">
             {!mobile && (
               <p className="font-bold text-2xl select-none cursor-pointer">
@@ -136,27 +138,22 @@ const Navbar = () => {
             <ExitIcon
               className="p-2 cursor-pointer rounded-full"
               size={24}
-              strokeClassName={`${
-                selected == 0
-                  ? "stroke-white group-hover:stroke-white/80"
-                  : "stroke-black/80 hover:stroke-black"
-              }`}
-              isActive={selected == 0}
+              strokeClassName={`stroke-black group-hover:stroke-black/80`}
             />
           </div>
-        </>
-      ) : (
-        <></>
+
+          <div className="appearance-none" />
+        </div>
       )}
       {mobile && (
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="w-10 h-10 rounded-full bg-white flex items-center justify-center box shadow-md cursor-pointer"
+          className="w-10 h-10 rounded-full fixed bottom-10 left-2 bg-white flex items-center justify-center box shadow-md cursor-pointer"
         >
           <p className="font-bold text-2xl select-none cursor-pointer">C.</p>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

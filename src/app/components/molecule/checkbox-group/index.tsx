@@ -1,9 +1,9 @@
 "use client";
 import Checkbox from "@/app/components/atom/checkbox";
-import ThreeDotsIcon from "@/app/assets/icons/three-dots";
 import Button from "@/app/components/atom/button";
 import useLocalStorageState from "@/app/hooks/local-storage";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import CrossIcon from "@/app/assets/icons/cross";
 
 type TVariants = "horizontal" | "vertical" | "grid";
 
@@ -33,8 +33,8 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
           return (
             <div key={"loading-check-group-" + idx} className={className}>
               <Checkbox isDisabled />
-              <ThreeDotsIcon
-                fillClassName="fill-black"
+              <CrossIcon
+                colorClass="fill-black"
                 className="hover:bg-blue-20 w-6 h-6 rounded-full flex items-center justify-center"
                 size={16}
               />
@@ -51,6 +51,14 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
     props.datas
   );
   const [sumChecked, setSumChecked] = useLocalStorageState("sum-checked", 0);
+
+  const refContentElement = useRef<any>();
+  const scrollToBottom = () => {
+    if (refContentElement.current) {
+      refContentElement.current.scrollTop =
+        refContentElement?.current?.scrollHeight;
+    }
+  };
 
   const handleClick = (idx: number) => {
     setDatasState(
@@ -79,9 +87,24 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
       { id: datasState.length, label: "Please fill", checked: false },
     ]);
   };
+
+  const handleDelete = (id: number) => {
+    const updatedDatas = datasState.filter((data) => data.id !== id);
+    setDatasState(updatedDatas);
+
+    const deletedItem = datasState.find((data) => data.id === id);
+    if (deletedItem && deletedItem.checked) {
+      setSumChecked(sumChecked - 1);
+    }
+  };
+
   useEffect(() => {
     setIsRendered(true);
   }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [datasState.length]);
 
   return (
     <div className="flex flex-col space-y-5 text-sm ">
@@ -97,14 +120,16 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
           label={<p className="text-black font-semibold">+ Add an item</p>}
         />
       </div>
+
       {isRendered ? (
         <fieldset
-          className={`${variantClass[variant]} ${props.className} max-h-[112px] overflow-y-auto`}
+          ref={refContentElement}
+          className={`${variantClass[variant]} ${props.className} max-h-[112px] overflow-y-auto scroll-smooth`}
         >
           {datasState.map((data, idx) => {
             return (
               <div
-                key={"checkbox-group-" + data.label + data.id}
+                key={idx + "checkbox-group-" + data.id}
                 className={className}
               >
                 <Checkbox
@@ -116,8 +141,9 @@ const CheckboxGroup = (props: ICheckboxGroupProps) => {
                   }}
                   isDisabled={props.isDisabled}
                 />
-                <ThreeDotsIcon
-                  fillClassName="fill-black"
+                <CrossIcon
+                  onClick={() => handleDelete(data.id)}
+                  colorClass="stroke-black"
                   className="hover:bg-blue-20 w-6 h-6 rounded-full flex items-center justify-center"
                   size={16}
                 />
