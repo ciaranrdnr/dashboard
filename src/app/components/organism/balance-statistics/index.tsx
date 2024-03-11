@@ -1,15 +1,20 @@
 import ArrowIcon from "@/app/assets/icons/arrow";
 import ChevronIcon from "@/app/assets/icons/chevron";
-import Button from "@/app/components/atom/button";
 import Chart from "@/app/components/organism/chart";
 import Image from "next/image";
 
-const BalanceStatisticsSection = () => {
+interface IBalanceStatisticsSection {
+  onTriggerAlert: (e?: any) => void;
+}
+const BalanceStatisticsSection = (props: IBalanceStatisticsSection) => {
   return (
     <div className="flex flex-col xl:space-y-2 p-5 h-full rounded-xl bg-white lg:w-6/12 xl:w-6/12 2xl:w-7/12">
       <div className="flex justify-between items-center">
         <h3 className="pb-2 font-semibold">Balance statistics</h3>
-        <div className="flex space-x-2 py-0.5 pl-2 cursor-pointer rounded-lg text-sm font-semibold bg-grey-50 hover:bg-grey-100/50">
+        <div
+          onClick={props.onTriggerAlert}
+          className="flex space-x-2 py-0.5 pl-2 cursor-pointer rounded-lg text-sm font-semibold bg-grey-50 hover:bg-grey-100/50"
+        >
           <p>Filter</p>
           <ChevronIcon
             size={24}

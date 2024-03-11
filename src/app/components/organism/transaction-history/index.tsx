@@ -12,13 +12,19 @@ interface ITDetail {
   date: string;
   value?: number;
   variant: TVariants;
+  onTriggerAlert: (e?: any) => void;
 }
+interface ITransactionHistorySection {
+  onTriggerAlert: (e?: any) => void;
+}
+
 const TransactionDetail = ({
   avatarSrc,
   date,
   name,
   value,
   variant,
+  ...props
 }: ITDetail) => {
   const dateConverted = new Date(date);
   return (
@@ -42,6 +48,7 @@ const TransactionDetail = ({
           {variant == "credit" ? "-" : "+"}${value ?? 0}
         </p>
         <ThreeDotsIcon
+          onClick={props.onTriggerAlert}
           fillClassName="fill-black"
           size={16}
           className="cursor-pointer hover:bg-blue-20 w-6 h-6 rounded-full flex items-center justify-center"
@@ -51,7 +58,7 @@ const TransactionDetail = ({
   );
 };
 
-const TransactionHistory = () => {
+const TransactionHistory = (props: ITransactionHistorySection) => {
   const datas = [
     {
       id: 0,
@@ -116,6 +123,7 @@ const TransactionHistory = () => {
             >
               <div className="w-full h-[1px] bg-grey-100/50" />
               <TransactionDetail
+                onTriggerAlert={props.onTriggerAlert}
                 {...data}
                 variant={data.variant as TVariants}
               />

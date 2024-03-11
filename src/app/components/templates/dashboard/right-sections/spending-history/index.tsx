@@ -5,15 +5,18 @@ import Button from "@/app/components/atom/button";
 import ArrowIcon from "@/app/assets/icons/arrow";
 import { useMemo, useState } from "react";
 
-type TVariants = "entertaiment" | "shopping" | "health" | "food";
+type TVariants = "entertainment" | "shopping" | "health" | "food";
 interface ITDetail {
   name?: string;
   date?: string;
   variant: TVariants;
 }
+interface ISpendingHistoryProps {
+  onTriggerAlert: (e?: any) => void;
+}
 const SpendingDetail = ({ name, date, variant }: ITDetail) => {
   const img = {
-    entertaiment: "",
+    entertainment: "",
     shopping: "",
     health: "",
     food: "",
@@ -35,7 +38,7 @@ const SpendingDetail = ({ name, date, variant }: ITDetail) => {
   );
 };
 
-const SpendingHistory = () => {
+const SpendingHistory = (props: ISpendingHistoryProps) => {
   const [isViewAll, setIsViewAll] = useState(false);
   const datas = [
     {
@@ -51,7 +54,7 @@ const SpendingHistory = () => {
     {
       id: 3,
       name: "Tickets",
-      variant: "entertaiment",
+      variant: "entertainment",
     },
     {
       id: 4,
@@ -71,10 +74,11 @@ const SpendingHistory = () => {
     return datas.slice(0, 3);
   }, [isViewAll, datas]);
   return (
-    <div className="flex flex-col items-center select-none space-y-4 p-4 rounded-xl border bg-white w-full">
+    <div className="flex flex-col items-center select-none space-y-4 p-4 rounded-xl lg:border bg-white w-full">
       <div className="flex justify-between w-full">
         <p className="font-semibold">Latest spending</p>
         <ThreeDotsIcon
+          onClick={props.onTriggerAlert}
           fillClassName="fill-black"
           size={16}
           className="cursor-pointer hover:bg-blue-20 w-6 h-6 rounded-full flex items-center justify-center"
